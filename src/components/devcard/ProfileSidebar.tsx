@@ -83,12 +83,12 @@ export function ProfileSidebar() {
             </Button>
         </div>
 
-        <Link href="/cv.pdf" download="AlexDoe-CV.pdf" passHref legacyBehavior>
-            <Button className="w-full">
+        <Button asChild className="w-full">
+            <Link href="/cv.pdf" download="AlexDoe-CV.pdf">
                 <FileText className="mr-2 h-4 w-4" />
                 Download CV
-            </Button>
-        </Link>
+            </Link>
+        </Button>
       </div>
     </aside>
   );
