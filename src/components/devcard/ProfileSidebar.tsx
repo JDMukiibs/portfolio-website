@@ -2,7 +2,8 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { Github, Linkedin, Instagram, Globe, FileText } from 'lucide-react';
+import { Linkedin, Globe, FileText } from 'lucide-react';
+import { SiGithub, SiInstagram } from '@icons-pack/react-simple-icons';
 import { Button } from '@/components/ui/button';
 
 export function ProfileSidebar() {
@@ -39,12 +40,12 @@ export function ProfileSidebar() {
             </Button>
             <Button variant="outline" size="icon" asChild>
                 <Link href="#" aria-label="GitHub Profile">
-                    <Github className="h-4 w-4" />
+                    <SiGithub className="h-4 w-4" />
                 </Link>
             </Button>
             <Button variant="outline" size="icon" asChild>
                 <Link href="#" aria-label="Instagram Profile">
-                    <Instagram className="h-4 w-4" />
+                    <SiInstagram className="h-4 w-4" />
                 </Link>
             </Button>
             <Button variant="outline" size="icon" asChild>
