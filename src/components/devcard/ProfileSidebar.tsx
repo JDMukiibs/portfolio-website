@@ -1,33 +1,12 @@
 "use client";
 
-import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Github, Linkedin, Instagram, Globe, FileText, Loader2 } from 'lucide-react';
+import { Github, Linkedin, Instagram, Globe, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Skeleton } from '@/components/ui/skeleton';
-import { personalizeIntroText } from '@/ai/flows/personalize-intro-text';
 
 export function ProfileSidebar() {
-  const [intro, setIntro] = useState('');
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // In a real application, you would get this data from a user's session or profile.
-    const visitorProfileData = "A frontend developer from Google visiting the portfolio of a full-stack developer specializing in Next.js and AI.";
-    
-    personalizeIntroText({ visitorProfileData })
-      .then(response => {
-        setIntro(response.personalizedText);
-      })
-      .catch(error => {
-        console.error("Failed to generate personalized intro:", error);
-        setIntro("Full-stack developer with a passion for building modern web applications and exploring the potential of AI.");
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
-  }, []);
+  const bio = "Hey there! I'm Joshua Daniel Mukiibi, a Full-Stack Software Engineer specializing in building robust and intuitive applications. With a passion for crafting impactful user experiences and powerful backend systems, I've honed my skills in Flutter, React Native, and .NET Core. I excel at architecting scalable solutions, implementing secure authentication flows, and leading agile development processes from sprint planning to deployment via Azure DevOps. You might find my current work on Next Aria, an AI-powered musical theatre song recommender, particularly interesting. I'm always eager to explore new challenges and collaborate on exciting projects!";
 
   return (
     <aside className="lg:sticky lg:top-12">
@@ -42,22 +21,14 @@ export function ProfileSidebar() {
             data-ai-hint="professional portrait"
           />
           <div>
-            <h1 className="text-2xl font-headline font-bold text-foreground">Alex Doe</h1>
+            <h1 className="text-2xl font-headline font-bold text-foreground">Joshua Daniel Mukiibi</h1>
             <p className="text-sm text-primary">Full-Stack Developer</p>
           </div>
         </div>
 
         <div>
           <h2 className="font-headline text-lg font-semibold mb-2">About Me</h2>
-          {isLoading ? (
-            <div className="space-y-2">
-              <Skeleton className="h-4 w-full" />
-              <Skeleton className="h-4 w-full" />
-              <Skeleton className="h-4 w-3/4" />
-            </div>
-          ) : (
-            <p className="text-muted-foreground text-sm">{intro}</p>
-          )}
+          <p className="text-muted-foreground text-sm">{bio}</p>
         </div>
         
         <div className="flex space-x-2">
@@ -84,7 +55,7 @@ export function ProfileSidebar() {
         </div>
 
         <Button asChild className="w-full">
-            <Link href="/cv.pdf" download="AlexDoe-CV.pdf">
+            <Link href="/cv.pdf" download="JoshuaDanielMukiibi-CV.pdf">
                 <FileText className="mr-2 h-4 w-4" />
                 Download CV
             </Link>
