@@ -56,7 +56,7 @@ export function ProfileSidebar() {
         </div>
 
         <Button asChild className="w-full">
-            <Link href="/cv.pdf" download="/assets/docs/Resume_JoshuaDaniel_Mukiibi.pdf">
+            <Link href="/assets/docs/Resume_JoshuaDaniel_Mukiibi.pdf" download>
                 <FileText className="mr-2 h-4 w-4" />
                 Download CV
             </Link>
