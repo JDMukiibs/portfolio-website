@@ -24,7 +24,7 @@ export default function RootLayout({
         <Toaster />
         <footer className="flex flex-col justify-center items-center h-20">
           <p className="text-sm text-gray-500">
-            Favicon sourced from Icons8: <a target="_blank" href="https://icons8.com/icon/N5H8YRvduAGy/source-code">Dev</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+            Favicon sourced from Icons8: <a target="_blank" rel="noopener noreferrer" href="https://icons8.com/icon/N5H8YRvduAGy/source-code">Dev</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
           </p>
           <p className="text-sm text-gray-500">
             &copy; {new Date().getFullYear()} Joshua Daniel Mukiibi
