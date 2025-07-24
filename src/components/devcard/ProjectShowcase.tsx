@@ -30,7 +30,7 @@ const projects: Project[] = [
     description: "The very portfolio you are browsing, built with a focus on minimalist design, performance, and with FirebaseStudio as a development environment.",
     imageUrl: "/assets/images/portfolioWordCloud.png",
     imageHint: "minimalist code",
-    githubUrl: "#",
+    githubUrl: "https://github.com/JDMukiibs/portfolio-website",
     tags: ["Next.js", "Genkit", "Shadcn UI"],
   },
 ];
