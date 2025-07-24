@@ -1,12 +1,16 @@
 "use server";
 
 import * as z from "zod";
+import { Resend } from 'resend';
+import { EmailTemplate } from "@/components/email-template";
 
 const contactFormSchema = z.object({
   name: z.string(),
   email: z.string().email(),
   message: z.string(),
 });
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function submitContactForm(values: z.infer<typeof contactFormSchema>) {
   const parsed = contactFormSchema.safeParse(values);
@@ -15,15 +19,23 @@ export async function submitContactForm(values: z.infer<typeof contactFormSchema
     return { success: false, message: "Invalid form data." };
   }
 
-  // In a real application, you would integrate with an email service like Resend, SendGrid, or Nodemailer.
-  // For this example, we'll just log the data to the console.
-  console.log("New contact form submission:");
-  console.log("Name:", parsed.data.name);
-  console.log("Email:", parsed.data.email);
-  console.log("Message:", parsed.data.message);
+  try {
+    const { data, error } = await resend.emails.send({
+      from: 'Portfolio Form <no-reply@notifications.mukiibs.dev>',
+      to: ['joshua.mukiibi@mukiibs.dev'],
+      subject: 'Get In Touch',
+      react: EmailTemplate({ name: parsed.data.name, email: parsed.data.email, message: parsed.data.message, }),
+    });
 
-  // Simulate a network delay
-  await new Promise(resolve => setTimeout(resolve, 1000));
+    if (error) {
+      console.error("Error sending email:", error);
+      return { success: false, message: "Form submission failed!" };
+    }
 
-  return { success: true, message: "Form submitted successfully!" };
+    console.log("Email sent successfully:", data);
+    return { success: true, message: "Form submitted successfully!" };
+  } catch (error) {
+    console.error("Error sending email:", error);
+    return { success: false, message: "Form submission failed!" };
+  }
 }
