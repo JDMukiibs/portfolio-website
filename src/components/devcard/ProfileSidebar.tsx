@@ -7,7 +7,7 @@ import { SiGithub, SiInstagram } from '@icons-pack/react-simple-icons';
 import { Button } from '@/components/ui/button';
 
 export function ProfileSidebar() {
-  const bio = "Hey there! I'm Joshua Daniel Mukiibi, a Full-Stack Software Engineer specializing in building robust and intuitive applications. With a passion for crafting impactful user experiences and powerful backend systems, I've honed my skills in Flutter, React Native, and .NET Core. I excel at architecting scalable solutions, implementing secure authentication flows, and leading agile development processes from sprint planning to deployment via Azure DevOps. You might find my current work on Next Aria, an AI-powered musical theatre song recommender, particularly interesting. I'm always eager to explore new challenges and collaborate on exciting projects!";
+  const bio = "Hey there! I'm Joshua Daniel Mukiibi, a Full-Stack Software Engineer specializing in building robust and intuitive applications. With a passion for crafting impactful user experiences and powerful backend systems, I've honed my skills across Flutter, React Native, React, and .NET Core. I excel at architecting scalable solutions, implementing secure authentication flows, and leading agile development processes from sprint planning to deployment via Azure DevOps. My ongoing exploration into Go, coupled with side projects, further showcases my commitment to continuous learning. You might find my current work on Next Aria, an AI-powered musical theatre song recommender, particularly interesting. I'm always eager to explore new challenges and collaborate on exciting projects!";
 
   return (
     <aside className="lg:sticky lg:top-12">
