@@ -34,25 +34,25 @@ export function ProfileSidebar() {
         
         <div className="flex space-x-2">
             <Button variant="outline" size="icon" asChild>
-                <Link href="#" aria-label="LinkedIn Profile">
+                <Link href="https://www.linkedin.com/in/joshua-d-mukiibi/" aria-label="LinkedIn Profile">
                     <Linkedin className="h-4 w-4" />
                 </Link>
             </Button>
             <Button variant="outline" size="icon" asChild>
-                <Link href="#" aria-label="GitHub Profile">
+                <Link href="https://github.com/JDMukiibs/" aria-label="GitHub Profile">
                     <SiGithub className="h-4 w-4" />
                 </Link>
             </Button>
             <Button variant="outline" size="icon" asChild>
-                <Link href="#" aria-label="Instagram Profile">
+                <Link href="https://www.instagram.com/josh_d_mukiibs/" aria-label="Instagram Profile">
                     <SiInstagram className="h-4 w-4" />
                 </Link>
             </Button>
-            <Button variant="outline" size="icon" asChild>
+{/*             <Button variant="outline" size="icon" asChild>
                 <Link href="#" aria-label="Personal Blog">
                     <Globe className="h-4 w-4" />
                 </Link>
-            </Button>
+            </Button> */}
         </div>
 
         <Button asChild className="w-full">
