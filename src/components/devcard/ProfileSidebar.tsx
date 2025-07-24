@@ -14,7 +14,7 @@ export function ProfileSidebar() {
       <div className="flex flex-col space-y-6">
         <div className="flex items-center space-x-4">
           <Image
-            src="https://placehold.co/80x80.png"
+            src="/assets/images/profilePhoto.jpg"
             alt="Developer's Photo"
             width={80}
             height={80}
@@ -56,7 +56,7 @@ export function ProfileSidebar() {
         </div>
 
         <Button asChild className="w-full">
-            <Link href="/cv.pdf" download="JoshuaDanielMukiibi-CV.pdf">
+            <Link href="/cv.pdf" download="/assets/docs/Resume_JoshuaDaniel_Mukiibi.pdf">
                 <FileText className="mr-2 h-4 w-4" />
                 Download CV
             </Link>
