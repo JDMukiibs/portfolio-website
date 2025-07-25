@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Github } from 'lucide-react';
+import { Github, Globe } from 'lucide-react';
 
 export interface Project {
   title: string;
@@ -11,6 +11,7 @@ export interface Project {
   imageUrl: string;
   imageHint: string;
   githubUrl: string;
+  liveUrl?: string;
   tags: string[];
 }
 
@@ -43,12 +44,22 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 <Badge key={tag} variant="secondary">{tag}</Badge>
             ))}
         </div>
-        <Button asChild className="w-full mt-auto" variant="outline">
-          <Link href={project.githubUrl}>
-            <Github className="mr-2 h-4 w-4" />
-            View on GitHub
-          </Link>
-        </Button>
+        <div className="flex flex-col sm:flex-row gap-2 w-full">
+            <Button asChild className="w-full" variant="outline">
+              <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                <Github className="mr-2 h-4 w-4" />
+                View on GitHub
+              </Link>
+            </Button>
+            {project.liveUrl && (
+                <Button asChild className="w-full">
+                    <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                        <Globe className="mr-2 h-4 w-4" />
+                        Live Preview
+                    </Link>
+                </Button>
+            )}
+        </div>
       </CardFooter>
     </Card>
   );

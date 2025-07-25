@@ -19,11 +19,11 @@ const projects: Project[] = [
   },
   {
     title: "REST-ful BE in Go",
-    description: "This Go project involved building a production-ready backend application, implementing scalable APIs, integrating with PostgreSQL via Docker, and developing authentication features.",
+    description: "This Go project involved building a production-ready backend application, implementing scalable APIs, and integrating with PostgreSQL via Docker.",
     imageUrl: "/assets/images/golang.png",
     imageHint: "backend development",
     githubUrl: "https://github.com/JDMukiibs/fem_project",
-    tags: ["Go", "PostgreSQL", "Docker", "Goose", "Chi"],
+    tags: ["Go", "PostgreSQL", "Docker"],
   },
   {
     title: "Portfolio Website",
@@ -31,6 +31,7 @@ const projects: Project[] = [
     imageUrl: "/assets/images/portfolioWordCloud.png",
     imageHint: "minimalist code",
     githubUrl: "https://github.com/JDMukiibs/portfolio-website",
+    liveUrl: "/",
     tags: ["Next.js", "Genkit", "Shadcn UI"],
   },
 ];
