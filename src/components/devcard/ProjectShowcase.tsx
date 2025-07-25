@@ -7,6 +7,7 @@ const projects: Project[] = [
     imageUrl: "/assets/images/next_aria_showcase_photo.png",
     imageHint: "Next Aria Banner",
     githubUrl: "https://github.com/JDMukiibs/next-aria-landing-page",
+    liveUrl: "https://nextaria.mukiibs.dev",
     tags: ["Flutter", "AI"],
   },
   {
