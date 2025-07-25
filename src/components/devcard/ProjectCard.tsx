@@ -44,7 +44,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 <Badge key={tag} variant="secondary">{tag}</Badge>
             ))}
         </div>
-        <div className="flex flex-col sm:flex-row gap-2 w-full">
+        <div className="flex flex-col gap-2 w-full">
             <Button asChild className="w-full" variant="outline">
               <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                 <Github className="mr-2 h-4 w-4" />
