@@ -73,7 +73,6 @@ export function ContactForm() {
 
   return (
     <section id="contact">
-      <h2 className="text-3xl font-headline font-bold mb-8 text-foreground">Get In Touch</h2>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

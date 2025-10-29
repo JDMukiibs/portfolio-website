@@ -1,6 +1,6 @@
 import { ProfileSidebar } from '@/components/devcard/ProfileSidebar';
 import { ProjectShowcase } from '@/components/devcard/ProjectShowcase';
-import { ContactForm } from '@/components/devcard/ContactForm';
+import { QuoteForm } from '@/components/devcard/QuoteForm';
 import { Separator } from '@/components/ui/separator';
 
 export default function Home() {
@@ -13,7 +13,7 @@ export default function Home() {
         <div className="lg:col-span-8 space-y-16">
           <ProjectShowcase />
           <Separator className="my-12" />
-          <ContactForm />
+          <QuoteForm />
         </div>
       </div>
     </main>

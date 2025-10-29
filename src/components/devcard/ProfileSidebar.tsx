@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { Linkedin, Globe, FileText } from 'lucide-react';
+import { Linkedin, FileText, Briefcase } from 'lucide-react';
 import { SiGithub, SiInstagram } from '@icons-pack/react-simple-icons';
 import { Button } from '@/components/ui/button';
 
@@ -48,19 +48,22 @@ export function ProfileSidebar() {
                     <SiInstagram className="h-4 w-4" />
                 </Link>
             </Button>
-{/*             <Button variant="outline" size="icon" asChild>
-                <Link href="#" aria-label="Personal Blog">
-                    <Globe className="h-4 w-4" />
-                </Link>
-            </Button> */}
         </div>
 
-        <Button asChild className="w-full">
-            <Link href="/assets/docs/Resume_JoshuaDaniel_Mukiibi.pdf" download>
-                <FileText className="mr-2 h-4 w-4" />
-                Download CV
+        <div className="flex flex-col gap-2">
+          <Button asChild className="w-full">
+              <Link href="/assets/docs/Resume_JoshuaDaniel_Mukiibi.pdf" download>
+                  <FileText className="mr-2 h-4 w-4" />
+                  Download CV
+              </Link>
+          </Button>
+          <Button asChild className="w-full" variant="secondary">
+            <Link href="#quote">
+              <Briefcase className="mr-2 h-4 w-4" />
+              Get a Quote
             </Link>
-        </Button>
+          </Button>
+        </div>
       </div>
     </aside>
   );
