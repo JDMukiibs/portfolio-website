@@ -56,7 +56,6 @@ const features = [
     { id: "thirdPartyIntegrations", label: "Third-party Integrations" },
     { id: "pushNotifications", label: "Push Notifications" },
     { id: "locationServices", label: "Location Services" },
-    { id: "sensorsIntegration", label: "Sensors Integration" },
 ] as const;
 
 const formSchema = z.object({
@@ -124,7 +123,7 @@ export function GetAQuoteForm() {
     <section id="quote-form">
         <div className="mb-8">
             <h3 className="text-2xl font-headline font-bold">Explore your best option, commitment-free.</h3>
-            <p className="text-muted-foreground">I'll provide you with an approximate estimate based on your project details. The more information you share, the more accurate the quote will be. This is completely free and doesn't bind us in any way - it's just to help you find the best services for your needs.</p>
+            <p className="text-muted-foreground">I'll contact you via email with an approximate estimate based on your project details. The more information you share, the more accurate the quote will be. This is completely free and doesn't bind us in any way - it's just to help you find the best services for your needs.</p>
         </div>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -355,7 +354,7 @@ export function GetAQuoteForm() {
           </Button>
 
            <FormDescription>
-            *The quote is approximate and not a binding contract. The more details you input—such as a detailed description, the number of screens, platforms, and features—the more accurate the quote will be.
+            *The more details you input—such as a detailed description, the number of screens, platforms, and features—the more accurate the quote will be in my email response.
           </FormDescription>
         </form>
       </Form>
