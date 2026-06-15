@@ -3,7 +3,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
 
 const siteDescription =
-  'Full-stack engineer building polished web and mobile products with Next.js, React, Flutter, and .NET. Currently building NextAria — AI-powered musical theatre song recommendations.';
+  'Full-stack engineer building polished web and mobile products across Next.js, React, Flutter, and .NET.';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.mukiibs.dev'),
