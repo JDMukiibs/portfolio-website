@@ -101,3 +101,45 @@
     );
   }
 }
+
+.curtain {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 50vw;
+  background: hsl(var(--background));
+  z-index: 9999;
+  pointer-events: none;
+  display: none;
+  will-change: transform;
+}
+
+.curtain--left {
+  left: 0;
+}
+
+.curtain--right {
+  right: 0;
+}
+
+html[data-curtain="play"] .curtain {
+  display: block;
+}
+
+html[data-curtain="play"] .curtain--left {
+  animation: curtain-open-left 750ms cubic-bezier(0.7, 0, 0.3, 1) forwards;
+}
+
+html[data-curtain="play"] .curtain--right {
+  animation: curtain-open-right 750ms cubic-bezier(0.7, 0, 0.3, 1) forwards;
+}
+
+@keyframes curtain-open-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+@keyframes curtain-open-right {
+  from { transform: translateX(0); }
+  to { transform: translateX(100%); }
+}

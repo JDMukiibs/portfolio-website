@@ -44,8 +44,15 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var p=sessionStorage.getItem('curtainPlayed')==='1';var r=window.matchMedia('(prefers-reduced-motion: reduce)').matches;if(p||r){document.documentElement.dataset.curtain='skip';}else{document.documentElement.dataset.curtain='play';sessionStorage.setItem('curtainPlayed','1');}}catch(e){document.documentElement.dataset.curtain='skip';}})();`,
+          }}
+        />
       </head>
       <body className="font-body antialiased bg-background" suppressHydrationWarning>
+        <div className="curtain curtain--left" aria-hidden="true" />
+        <div className="curtain curtain--right" aria-hidden="true" />
         {children}
         <Toaster />
         <footer className="flex flex-col justify-center items-center h-20">
