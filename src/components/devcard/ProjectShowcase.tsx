@@ -8,7 +8,7 @@ const projects: Project[] = [
     imageHint: "Next Aria Banner",
     githubUrl: "https://github.com/JDMukiibs/next-aria-landing-page",
     liveUrl: "https://nextaria.mukiibs.dev",
-    tags: ["Flutter", "AI"],
+    tags: ["Next.js", "AI"],
   },
   {
     title: "pokedex cli",

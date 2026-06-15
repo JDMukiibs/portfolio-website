@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -59,6 +55,7 @@ body {
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --spotlight: 166 40% 48%;
   }
 }
 
@@ -68,5 +65,39 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+.spotlight-hero {
+  --mx: 50%;
+  --my: 25%;
+  position: relative;
+}
+
+.spotlight-hero__glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(
+    260px circle at var(--mx) var(--my),
+    hsl(var(--spotlight) / 0.22),
+    hsl(var(--spotlight) / 0.08) 45%,
+    transparent 75%
+  );
+}
+
+.spotlight-hero__content {
+  position: relative;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce), (hover: none) {
+  .spotlight-hero__glow {
+    background: radial-gradient(
+      360px circle at 50% 25%,
+      hsl(var(--spotlight) / 0.14),
+      transparent 70%
+    );
   }
 }

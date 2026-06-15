@@ -2,9 +2,35 @@ import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
 
+const siteDescription =
+  'Full-stack engineer building polished web and mobile products with Next.js, React, Flutter, and .NET. Currently building NextAria — AI-powered musical theatre song recommendations.';
+
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.mukiibs.dev'),
   title: 'Joshua Daniel Mukiibi',
-  description: 'A professional developer portfolio.',
+  description: siteDescription,
+  openGraph: {
+    title: 'Joshua Daniel Mukiibi — Full-Stack Software Engineer',
+    description: siteDescription,
+    url: 'https://www.mukiibs.dev',
+    siteName: 'Joshua Daniel Mukiibi',
+    images: [
+      {
+        url: '/assets/images/og-card.png',
+        width: 1200,
+        height: 630,
+        alt: 'Joshua Daniel Mukiibi — Full-Stack Software Engineer',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Joshua Daniel Mukiibi — Full-Stack Software Engineer',
+    description: siteDescription,
+    images: ['/assets/images/og-card.png'],
+  },
 };
 
 export default function RootLayout({
