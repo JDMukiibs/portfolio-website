@@ -1,8 +1,8 @@
 import { ProfileSidebar } from '@/components/devcard/ProfileSidebar';
 import { ProjectShowcase } from '@/components/devcard/ProjectShowcase';
 import { QuoteForm } from '@/components/devcard/QuoteForm';
-import { Separator } from '@/components/ui/separator';
 import { SpotlightHero } from '@/components/devcard/SpotlightHero';
+import { EqualizerDivider } from '@/components/devcard/EqualizerDivider';
 
 export default function Home() {
   return (
@@ -15,7 +15,7 @@ export default function Home() {
         </div>
         <div className="lg:col-span-8 space-y-16">
           <ProjectShowcase />
-          <Separator className="my-12" />
+          <EqualizerDivider />
           <QuoteForm />
         </div>
       </div>
