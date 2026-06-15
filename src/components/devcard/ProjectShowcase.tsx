@@ -1,4 +1,5 @@
 import { ProjectCard, type Project } from './ProjectCard';
+import { CrescendoItem } from './CrescendoItem';
 
 const projects: Project[] = [
   {
@@ -42,8 +43,10 @@ export function ProjectShowcase() {
     <section id="projects">
       <h2 className="text-3xl font-headline font-bold mb-8 text-foreground">Featured Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {projects.map((project) => (
-          <ProjectCard key={project.title} project={project} />
+        {projects.map((project, idx) => (
+          <CrescendoItem key={project.title} index={idx}>
+            <ProjectCard project={project} />
+          </CrescendoItem>
         ))}
       </div>
     </section>

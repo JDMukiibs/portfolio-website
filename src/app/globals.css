@@ -143,3 +143,27 @@ html[data-curtain="play"] .curtain--right {
   from { transform: translateX(0); }
   to { transform: translateX(100%); }
 }
+
+.crescendo {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 600ms ease-out,
+    transform 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.crescendo--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .curtain {
+    display: none !important;
+  }
+  .crescendo {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

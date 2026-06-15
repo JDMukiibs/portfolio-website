@@ -49,6 +49,9 @@ export default function RootLayout({
             __html: `(function(){try{var p=sessionStorage.getItem('curtainPlayed')==='1';var r=window.matchMedia('(prefers-reduced-motion: reduce)').matches;if(p||r){document.documentElement.dataset.curtain='skip';}else{document.documentElement.dataset.curtain='play';sessionStorage.setItem('curtainPlayed','1');}}catch(e){document.documentElement.dataset.curtain='skip';}})();`,
           }}
         />
+        <noscript>
+          <style>{`.crescendo{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
       </head>
       <body className="font-body antialiased bg-background" suppressHydrationWarning>
         <div className="curtain curtain--left" aria-hidden="true" />
