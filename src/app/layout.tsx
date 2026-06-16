@@ -2,9 +2,35 @@ import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
 
+const siteDescription =
+  'Full-stack engineer building polished web and mobile products across Next.js, React, Flutter, and .NET.';
+
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.mukiibs.dev'),
   title: 'Joshua Daniel Mukiibi',
-  description: 'A professional developer portfolio.',
+  description: siteDescription,
+  openGraph: {
+    title: 'Joshua Daniel Mukiibi — Full-Stack Software Engineer',
+    description: siteDescription,
+    url: 'https://www.mukiibs.dev',
+    siteName: 'Joshua Daniel Mukiibi',
+    images: [
+      {
+        url: '/assets/images/og-card.png',
+        width: 1200,
+        height: 630,
+        alt: 'Joshua Daniel Mukiibi — Full-Stack Software Engineer',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Joshua Daniel Mukiibi — Full-Stack Software Engineer',
+    description: siteDescription,
+    images: ['/assets/images/og-card.png'],
+  },
 };
 
 export default function RootLayout({
@@ -18,8 +44,18 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var p=sessionStorage.getItem('curtainPlayed')==='1';var r=window.matchMedia('(prefers-reduced-motion: reduce)').matches;if(p||r){document.documentElement.dataset.curtain='skip';}else{document.documentElement.dataset.curtain='play';sessionStorage.setItem('curtainPlayed','1');}}catch(e){document.documentElement.dataset.curtain='skip';}})();`,
+          }}
+        />
+        <noscript>
+          <style>{`.crescendo{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
       </head>
       <body className="font-body antialiased bg-background" suppressHydrationWarning>
+        <div className="curtain curtain--left" aria-hidden="true" />
+        <div className="curtain curtain--right" aria-hidden="true" />
         {children}
         <Toaster />
         <footer className="flex flex-col justify-center items-center h-20">

@@ -7,7 +7,7 @@ import { SiGithub, SiInstagram } from '@icons-pack/react-simple-icons';
 import { Button } from '@/components/ui/button';
 
 export function ProfileSidebar() {
-  const bio = "Hey there! I'm Joshua Daniel Mukiibi, a Full-Stack Software Engineer specializing in building robust and intuitive applications. With a passion for crafting impactful user experiences and powerful backend systems, I've honed my skills across Flutter, React Native, React, and .NET Core. I excel at architecting scalable solutions, implementing secure authentication flows, and leading agile development processes from sprint planning to deployment via Azure DevOps. My ongoing exploration into Go, coupled with side projects, further showcases my commitment to continuous learning. You might find my current work on Next Aria, an AI-powered musical theatre song recommender, particularly interesting. I'm always eager to explore new challenges and collaborate on exciting projects!";
+  const bio = "Hey there — I'm Joshua, a full-stack engineer with a deep love for musical theatre. I work across Flutter, React Native, React, and .NET, and the part of the job I like most is owning a feature from sprint planning to production. Currently building NextAria — an AI song recommender for performers.";
 
   return (
     <aside className="lg:sticky lg:top-12">
@@ -23,12 +23,12 @@ export function ProfileSidebar() {
           />
           <div>
             <h1 className="text-2xl font-headline font-bold text-foreground">Joshua Daniel Mukiibi</h1>
-            <p className="text-sm text-primary">Full-Stack Developer</p>
+            <p className="text-sm text-primary">Full-stack engineer · theatre devotee</p>
           </div>
         </div>
 
         <div>
-          <h2 className="font-headline text-lg font-semibold mb-2">About Me</h2>
+          <h2 className="font-headline text-lg font-semibold mb-2">Behind the curtain</h2>
           <p className="text-muted-foreground text-sm">{bio}</p>
         </div>
         
