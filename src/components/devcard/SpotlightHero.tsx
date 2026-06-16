@@ -18,21 +18,32 @@ export function SpotlightHero({ children }: { children: ReactNode }) {
     let pendingY = 0;
 
     const handleMove = (e: MouseEvent) => {
-      const rect = el.getBoundingClientRect();
-      pendingX = e.clientX - rect.left;
-      pendingY = e.clientY - rect.top;
+      pendingX = e.clientX;
+      pendingY = e.clientY;
       if (!rafId) {
         rafId = requestAnimationFrame(() => {
-          el.style.setProperty('--mx', `${pendingX}px`);
-          el.style.setProperty('--my', `${pendingY}px`);
+          const rect = el.getBoundingClientRect();
+          el.style.setProperty('--mx', `${pendingX - rect.left}px`);
+          el.style.setProperty('--my', `${pendingY - rect.top}px`);
           rafId = 0;
         });
       }
     };
 
+    const handleLeave = () => {
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+        rafId = 0;
+      }
+      el.style.removeProperty('--mx');
+      el.style.removeProperty('--my');
+    };
+
     el.addEventListener('mousemove', handleMove, { passive: true });
+    el.addEventListener('mouseleave', handleLeave);
     return () => {
       el.removeEventListener('mousemove', handleMove);
+      el.removeEventListener('mouseleave', handleLeave);
       if (rafId) cancelAnimationFrame(rafId);
     };
   }, []);
